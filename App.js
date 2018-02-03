@@ -79,6 +79,7 @@ const ReactMove = (props) => {
     <Animate
       show={props.show}
       start={() => {
+        // 開始時
         console.log("start", props);
         return {
           x: 0,
@@ -87,6 +88,7 @@ const ReactMove = (props) => {
         };
       }}
       leave={() => {
+        // show===falseで消える時
         console.log("leave", props);
         return {
           opacity: [0],
@@ -94,6 +96,7 @@ const ReactMove = (props) => {
         };
       }}
       update={() => {
+        // ここでCSSのtranslate3dの値を更新
         console.log("update", props);
         return {
           x: [props.open ? 540 : 0],
